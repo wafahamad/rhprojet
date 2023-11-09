@@ -1,87 +1,165 @@
-<app-navbar-emp></app-navbar-emp>
+<app-navbar-emp></app-navbar-emp> <!--appel de la navBar-->
+<!--contenu de page-->
 <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
-
-    <div class="row">
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
+    <!--bloc des contenaires de l'enregistrement -->
+    <div class="row justify-content-center">
+        <!--pour enregistrer les heures de départ et arrivés-->
+        <div class="col-xl-3 col-md-6 mb-4 ">
+            <div class="card border-left-primary shadow h-100 py-2" style="cursor: pointer;">
+                <div class="card-body" (click)="openDA()">
+                    <!--appel de fonction openDA pour ouvrir popup de l'enregistrement-->
                     <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
+                        <div class="col mr-2" style="text-align: center; ">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Enregistrer <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                Enregistrer
                             </div>
 
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 Heures départ/arrivée
                             </div>
                         </div>
-                        
-                        <div class="col-auto">
 
+                        <div class="col-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                                class="bi bi-floppy2" viewBox="0 0 16 16">
+                                <path
+                                    d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0ZM1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v3.5A1.5 1.5 0 0 1 11.5 6h-7A1.5 1.5 0 0 1 3 4.5V1H1.5a.5.5 0 0 0-.5.5Zm9.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-1Z" />
+                            </svg>
                         </div>
+                    </div>
+                </div>
+                <!-- c'est le formulaire de l'enregistrement -->
+                <div id="myModal" class="modal" style="display: block" *ngIf="testDA">
+                    <!-- Modal content -->
+                    <div class="modal-content " style="width:20% ; height: 80%;">
+                        <span class="close closeForm" (click)="openDA()">&times;</span>
+                        <p style="text-align: center;">Enregistrement des heures Départ/Arrivés</p>
+                        <form action="#" method="post" class="formDA">
+                            <div class="form-group">
+                                <div>
+                                    <label for="nom">Date de jour</label> <br>
+                                    <input type="Date" id="datCong" name="DateCong" class="form-control" required><br>
+                                </div>
+                                <div>
+                                    <label for="nom">Heure Départ</label> <br>
+                                    <input type="number" id="nom" name="HD" class="form-control" required><br>
+                                </div>
+                                <div>
+                                    <label for="nom">Heure Arrivé</label> <br>
+                                    <input type="number" id="nom" name="HA" class="form-control" required> <br>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-dark">Enregistrer</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+        <!--pour enregistrer les heures supplémentaires-->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
+            <div class="card border-left-primary shadow h-100 py-2" style="cursor: pointer;">
+                <div class="card-body" (click)="openSupp()">
+                    <!--appel de fonction openDA pour ouvrir popup de l'enregistrement-->
                     <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
+                        <div class="col mr-2" style="text-align: center; ">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Enregistrer
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 Heures de travail supplémentaires
                             </div>
+
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                                class="bi bi-floppy2" viewBox="0 0 16 16">
+                                <path
+                                    d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0ZM1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v3.5A1.5 1.5 0 0 1 11.5 6h-7A1.5 1.5 0 0 1 3 4.5V1H1.5a.5.5 0 0 0-.5.5Zm9.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-1Z" />
+                            </svg>
                         </div>
+                    </div>
+                </div>
+                <div id="myModal" class="modal" style="display: block" *ngIf="testSupp">
+                    <!-- Modal content -->
+                    <div class="modal-content" style="width:20% ; height: 80%;">
+                        <span class="close" (click)="openSupp()">&times;</span>
+                        <p style="text-align: center;">Enregistrement des heures Supplémentaires</p>
+                        <form action="#" method="post" class="formDA">
+                            <div class="form-group">
+                                <div>
+                                    <label for="nom">Date</label>
+                                    <input type="Date" id="datCong" name="DateHSupp" class="form-control" required>
+                                </div>
+                                <label for="nom">Nombre des heures</label>
+                                <input type="number" id="nom" name="nbrHCong" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-dark">Enregistrer</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+        <!--pour enregistrer les heures de congé-->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
+            <div class="card border-left-primary shadow h-100 py-2" style="cursor: pointer;">
+                <div class="card-body" (click)="openCong()">
+                    <!--appel de fonction openDA pour ouvrir popup de l'enregistrement-->
                     <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
+                        <div class="col mr-2" style="text-align: center; ">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Enregistrer <i class="bi bi-arrow-bar-down"></i>
+                                Enregister
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 Heures de congé
                             </div>
+
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                                class="bi bi-floppy2" viewBox="0 0 16 16">
+                                <path
+                                    d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0ZM1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v3.5A1.5 1.5 0 0 1 11.5 6h-7A1.5 1.5 0 0 1 3 4.5V1H1.5a.5.5 0 0 0-.5.5Zm9.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-1Z" />
+                            </svg>
                         </div>
+                    </div>
+                </div>
+                <div id="myModal" class="modal" style="display: block" *ngIf="testCong">
+                    <!-- Modal content -->
+                    <div class="modal-content" style="width:20% ; height: 80%;">
+                        <span class="close closeForm" (click)="openCong()">&times;</span>
+                        <p style="text-align: center;">Enregistrement des heures de congé</p>
+                        <form action="#" method="post" class="formDA">
+                            <div class="form-group">
+                                <div>
+                                    <label for="nom">Date</label>
+                                    <input type="Date" id="datCong" name="DateCong" class="form-control" required>
+                                </div>
+                                <label for="nom">Nombre des heures</label>
+                                <input type="number" id="nom" name="nom" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-dark">Enregistrer</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
+    </div> <!-- end containers-->
+
+
+    <!--bloc pour la courbe de perfermance-->
     <div class="col-xl-8 col-lg-7">
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Ma perfermance</h6>
-                <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                        aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Par jour</a>
-                        <a class="dropdown-item" href="#">par mois</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">par évaluation</a>
-                    </div>
-                </div>
+
             </div>
             <!-- Card Body -->
             <div class="card-body">
@@ -91,47 +169,9 @@
             </div>
         </div>
     </div>
+    <!--end bloc courbe perfermance-->
 
-    <!-- Pie Chart -->
-    <div class="col-xl-4 col-lg-5">
-        <div class="card shadow mb-4">
-            <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-                <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                        aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Card Body -->
-            <div class="card-body">
-                <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
-                </div>
-                <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                        <i class="fas fa-circle text-primary"></i> Direct
-                    </span>
-                    <span class="mr-2">
-                        <i class="fas fa-circle text-success"></i> Social
-                    </span>
-                    <span class="mr-2">
-                        <i class="fas fa-circle text-info"></i> Referral
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"

@@ -37,7 +37,7 @@
 }
 
 li:hover {
-    background-color: grey;
+    background-color: #8D77AB;
     border-style: solid;
     border-radius: 30px;
 }
@@ -62,7 +62,23 @@ li:hover {
     animation-duration: 200ms;
     -webkit-animation-timing-function: transform cubic-bezier(0.18, 1.25, 0.4, 1), opacity cubic-bezier(0, 1, 0.4, 1);
     animation-timing-function: transform cubic-bezier(0.18, 1.25, 0.4, 1), opacity cubic-bezier(0, 1, 0.4, 1);
+    
 }
 .dark-nav {
     background-color: #222;
+  }
+  .bgNav{
+    background-color:#49326B
+  }
+  .titleNav{
+    color: azure;
+    text-align: left;
+  }
+  .navBrand{
+    color: azure;
+    font-family: Fantasy;
+    font-weight: 100;
+    width: 100%;
+    text-align: center;
+    text-size-adjust:50;
   }

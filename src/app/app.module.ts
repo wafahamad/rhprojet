@@ -8,6 +8,7 @@ import { HomeRhComponent } from './Interfaces/RH/home-rh/home-rh.component';
 import { PerformingEmpComponent } from './Interfaces/RH/performing-emp/performing-emp.component';
 import { NavbarComponent } from './Interfaces/RH/navbar/navbar.component';
 import { NavbarEmpComponent } from './Interfaces/Employe/navbar-emp/navbar-emp.component';
+import { LoginComponent } from './Interfaces/Employe/login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavbarEmpComponent } from './Interfaces/Employe/navbar-emp/navbar-emp.c
     HomeRhComponent,
     PerformingEmpComponent,
     NavbarComponent,
-    NavbarEmpComponent
+    NavbarEmpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
