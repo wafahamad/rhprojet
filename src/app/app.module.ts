@@ -9,7 +9,7 @@ import { PerformingEmpComponent } from './Interfaces/RH/performing-emp/performin
 import { NavbarComponent } from './Interfaces/RH/navbar/navbar.component';
 import { NavbarEmpComponent } from './Interfaces/Employe/navbar-emp/navbar-emp.component';
 import { LoginComponent } from './Interfaces/Employe/login/login.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,8 @@ import { LoginComponent } from './Interfaces/Employe/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
