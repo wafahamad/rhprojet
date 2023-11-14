@@ -6,11 +6,11 @@ import { HomeEmpComponent } from './Interfaces/Employe/home-emp/home-emp.compone
 import { LoginComponent } from './Interfaces/Employe/login/login.component';
 
 const routes: Routes = [
-  {path:"", component:LoginComponent},
-  {path:"loginEmp",component:LoginComponent},
-  {path:"homeRh",component:HomeRhComponent},
-  { path:"performingEmp", component: PerformingEmpComponent},
-  {path:"homeEmploye",component:HomeEmpComponent}
+  {path:"",title:"login",component:LoginComponent},
+  {path:"loginEmp",title:"login",component:LoginComponent},
+  {path:"homeRh",title:"home",component:HomeRhComponent},
+  { path:"performingEmp/:id" ,title:"performing", component: PerformingEmpComponent},
+  {path:"homeEmploye/:id",title:"home",component:HomeEmpComponent}
 ];
 
 @NgModule({

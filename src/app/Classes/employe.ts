@@ -1,20 +1,20 @@
 export class Employe {
-    IdEmploye: number;
+    id: number;
     nom: string;
-    prénom: string;
-    post: string;
+    prenom: string;
+    poste: string;
     adresse: string;
-   
-    département: string;
-  
-    constructor(IdEmploye: number, nom: string, prénom: string, post: string, adresse: string,  département: string) {
-      this.IdEmploye = IdEmploye;
+    departement: string;
+    role : string;
+
+    constructor(id: number, nom: string, prenom: string, poste: string, adresse: string,  departement: string,role:string) {
+      this.id = id;
       this.nom = nom;
-      this.prénom = prénom;
-      this.post = post;
+      this.prenom = prenom;
+      this.poste = poste;
       this.adresse = adresse;
-     
-      this.département = département;
+      this.role = role
+      this.departement = departement;
     }
   }
   
