@@ -11,6 +11,8 @@ import { NavbarEmpComponent } from './Interfaces/Employe/navbar-emp/navbar-emp.c
 import { LoginComponent } from './Interfaces/Employe/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListEmployeesDepComponent } from './Interfaces/RH/list-employees-dep/list-employees-dep.component';
+import { LoginRhComponent } from './Interfaces/RH/login-rh/login-rh.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,9 @@ import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
     PerformingEmpComponent,
     NavbarComponent,
     NavbarEmpComponent,
-    LoginComponent
+    LoginComponent,
+    ListEmployeesDepComponent,
+    LoginRhComponent
   ],
   imports: [
     BrowserModule,

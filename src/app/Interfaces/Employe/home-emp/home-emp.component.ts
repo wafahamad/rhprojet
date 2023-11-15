@@ -13,8 +13,7 @@ import { EmployeServiceService } from 'src/app/Services/employe-service.service'
 export class HomeEmpComponent {
   constructor(private activatedRoute: ActivatedRoute, public service: EmployeServiceService, public calendarS: CalandrierService, public formBuilder: FormBuilder) { }
 
-  testDA: boolean = false;
-  testDD: boolean = false;
+ 
   testSupp: boolean = false;
   testCong: boolean = false;
   id: any;

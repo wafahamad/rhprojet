@@ -4,13 +4,15 @@ import { PerformingEmpComponent } from './Interfaces/RH/performing-emp/performin
 import { HomeRhComponent } from './Interfaces/RH/home-rh/home-rh.component';
 import { HomeEmpComponent } from './Interfaces/Employe/home-emp/home-emp.component';
 import { LoginComponent } from './Interfaces/Employe/login/login.component';
+import { ListEmployeesDepComponent } from './Interfaces/RH/list-employees-dep/list-employees-dep.component';
 
 const routes: Routes = [
   {path:"",title:"login",component:LoginComponent},
   {path:"loginEmp",title:"login",component:LoginComponent},
   {path:"homeRh",title:"home",component:HomeRhComponent},
   { path:"performingEmp/:id" ,title:"performing", component: PerformingEmpComponent},
-  {path:"homeEmploye/:id",title:"home",component:HomeEmpComponent}
+  {path:"homeEmploye/:id",title:"home",component:HomeEmpComponent},
+  {path:"listEmplyees",title:"list employees dep",component:ListEmployeesDepComponent},
 ];
 
 @NgModule({
