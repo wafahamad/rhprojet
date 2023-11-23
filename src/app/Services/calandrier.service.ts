@@ -4,25 +4,27 @@ import { Observable } from 'rxjs';
 import { Employe } from '../Classes/employe';
 import { CalendrierEmp } from '../Classes/calendrier-emp';
 
-const URL: string = 'http://localhost:3000/calendar'
+const URL: string = 'http://localhost:3001/calendar'
 @Injectable({
   providedIn: 'root'
 })
 export class CalandrierService {
 
   constructor(private http: HttpClient) { }
-  AjouterHeureArriv(id:number,date:Date):Observable <CalendrierEmp>{
-    return this.http.post<CalendrierEmp>(URL+"/ajouterHeureArriv/"+id,date);
+  AjouterHeureArriv(id:number):Observable <CalendrierEmp>{
+    return this.http.post<CalendrierEmp>(URL+"/ajouterHeureArriv/"+id,{});
   }
-  AjouterHeureDep(id:number,date:Date):Observable <CalendrierEmp>{
-    return this.http.post<CalendrierEmp>(URL+"/ajouterHeureDep/"+id,date);
+  AjouterHeureDep(id:number):Observable <CalendrierEmp>{
+    return this.http.post<CalendrierEmp>(URL+"/ajouterHeureDep/"+id,{});
   }
-  AjouterHeureSup(id:number,heur:number):Observable <CalendrierEmp>{
-    return this.http.post<CalendrierEmp>(URL+"/modifierHeureSupp/"+id,heur);
-  }
+ 
   AjouterHeureCong(id:number,heur:number):Observable <CalendrierEmp>{
     return this.http.post<CalendrierEmp>(URL+"/modifierHeureConge/"+id,heur);
   }
+  getDate(id:number):Observable <CalendrierEmp>{
+    return this.http.get<CalendrierEmp>(URL+"/getcalendrier/"+id);
+  }
+
  /* Suivreperformance: async (employeId: number, date: Date) => {
     const calendarEntry = await CalendrierEmp.findOne({ where: { employeId, jour: date } });
     if (!calendarEntry) {
