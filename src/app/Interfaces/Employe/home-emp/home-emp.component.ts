@@ -34,7 +34,10 @@ export class HomeEmpComponent {
   AjouterHeureDep() {
     alert(new Date())
     this.calendarS.AjouterHeureDep(this.id).subscribe(
-      data => this.heurDep = data.heureDep
+      data =>{ this.heurDep = data.heureDep
+      console.log(data);
+      
+      }
     )
   }
   AjouterHeureArriv() {

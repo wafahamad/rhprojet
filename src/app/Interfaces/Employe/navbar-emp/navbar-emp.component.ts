@@ -1,28 +1,41 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Employe } from 'src/app/Classes/employe';
 import { EmployeServiceService } from 'src/app/Services/employe-service.service';
 
 @Component({
   selector: 'app-navbar-emp',
   templateUrl: './navbar-emp.component.html',
-  styleUrls: ['./navbar-emp.component.css']
+  styleUrls: ['./navbar-emp.component.css'],
 })
 export class NavbarEmpComponent {
   id: any;
-  employe !:Employe;
+  employe!: Employe;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    public service: EmployeServiceService,
+    public router: Router
+  ) {}
   
-  constructor(private activatedRoute:ActivatedRoute,public service:EmployeServiceService){}
+    naListCal()
+    {
+      this.router.navigate(['listEmp',this.id]);
 
-  ngOnInit()
-  {
-    
-    this.id=this.activatedRoute.snapshot.params['id']
+    }
+    naHomeEmploye()
+    {
+      this.router.navigate(['homeEmploye',this.id]);
+
+    }
+
+
+  ngOnInit() {
+    this.id = this.activatedRoute.snapshot.params['id'];
     console.log(this.id);
-    this.service.getEmpById(this.id).subscribe(data=>{console.log(data)
-    this.employe = data}
-    
-    )
-
+    this.service.getEmpById(this.id).subscribe((data) => {
+      console.log(data);
+      this.employe = data;
+    });
   }
 }

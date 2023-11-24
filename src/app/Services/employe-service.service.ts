@@ -15,12 +15,20 @@ export class EmployeServiceService {
   AfficherEmp():Observable<Employe[]>{
     return this.http.get<Employe[]>(URL);
   }
+  updateEmp(id:number,emp:Employe):Observable<Employe>{
+    return this.http.put<Employe>(URL+"/"+id,emp);
+  }
+
   getEmpById(id:number):Observable<Employe>{
     return this.http.get<Employe>(URL+"/"+id)
   } 
   login(email: string, password: string): Observable<any> {
     const data = {email: email, password:password };
     return this.http.post<any>(URL + "/login", data);
+  }
+  delete(id:number,): Observable<any> {
+
+    return this.http.delete<Employe>(URL+"/"+id);
   }
 
   register(userDetails: any): Observable<Employe> {

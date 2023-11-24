@@ -25,7 +25,13 @@ export class LoginComponent {
     this.service.login(email, password).subscribe(
       data => {
         console.log(data);
-        this.router.navigate(['/homeEmploye',data.user.id]);
+        if(data.user.role=="employe"){
+          this.router.navigate(['/homeEmploye',data.user.id]);
+        }
+        else {
+          alert("tu n'as pas l'autorisation ");
+        }
+        
       }
     );
   }

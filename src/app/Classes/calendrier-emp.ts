@@ -1,4 +1,5 @@
 export class CalendrierEmp {
+    jour:Date;
     IdCalandrierEmp: number;
     heureArriv: Date;
     heureDep: Date;
@@ -10,13 +11,16 @@ export class CalendrierEmp {
       heureArriv: Date,
       heureDep: Date,
       heureSup: number,
-      heureConge: number
+      heureConge: number,
+      jour:Date
+
     ) {
       this.IdCalandrierEmp = IdCalandrierEmp;
       this.heureArriv = heureArriv;
       this.heureDep = heureDep;
       this.heureSup = heureSup;
       this.heureConge = heureConge;
+      this.jour=jour
     }
   }
   

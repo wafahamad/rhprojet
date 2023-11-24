@@ -14,6 +14,9 @@ import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListEmployeesDepComponent } from './Interfaces/RH/list-employees-dep/list-employees-dep.component';
 import { LoginRhComponent } from './Interfaces/RH/login-rh/login-rh.component';
 import { ListCalendrierComponent } from './Interfaces/Employe/list-calendrier/list-calendrier.component';
+import { EditEmployeComponent } from './Interfaces/RH/edit-employe/edit-employe.component';
+import { HomeComponent } from './Interfaces/home/home.component';
+import { AjouterEmpComponent } from './Interfaces/RH/ajouter-emp/ajouter-emp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,10 @@ import { ListCalendrierComponent } from './Interfaces/Employe/list-calendrier/li
     LoginComponent,
     ListEmployeesDepComponent,
     LoginRhComponent,
-    ListCalendrierComponent
+    ListCalendrierComponent,
+    EditEmployeComponent,
+    HomeComponent,
+    AjouterEmpComponent
   ],
   imports: [
     BrowserModule,

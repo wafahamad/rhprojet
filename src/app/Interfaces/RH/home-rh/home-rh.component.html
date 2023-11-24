@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body" routerLink="/listEmplyees">
+                <div class="card-body" routerLink="/listEmplyees/marketing">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
@@ -24,7 +24,7 @@
         </div>
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body" routerLink="/listEmplyees">
+                <div class="card-body" routerLink="/listEmplyees/developpement">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
@@ -43,7 +43,7 @@
         </div>
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body" routerLink="/listEmplyees">
+                <div class="card-body" routerLink="/listEmplyees/finance">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
@@ -62,7 +62,7 @@
         </div>
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
+                <div class="card-body" routerLink="/listEmplyees/bureau">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
@@ -116,19 +116,27 @@
                                     <tr>
                                         <th scope="col">ID</th>
                                         <th scope="col">Nom&Prénom</th>
+                                        <th scope="col">poste</th>
+                                        <th scope="col">Nombre de jours de travail.</th>
+
                                         <th scope="col">Departement</th>
 
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">17371705</th>
-                                        <td>Jihene Ben Ammar</td>
-                                        <td>Developpement</td>
+                                    <tr *ngFor="let employe of employes">
+                                        <th scope="row">{{employe.id}}</th>
+                                        <td>{{employe.nom}} {{employe.prenom}}</td>
+                                        <td>{{employe.poste}}</td>
+                                        <td>{{employe.calendrier.length}}</td>
+                                        <td>{{employe.departement}}</td>
 
                                         <td>
-                                            <a class="btn btn-sm btn-primary" routerLink="/performingEmp/1">View</a>
+                                            <a class="btn btn-sm btn-primary" (click)="selectEmployePerforming(employe.id)">View</a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-sm btn-primary" (click)="selectEmployeEdit(employe.id)">Edit</a>
                                         </td>
                                     </tr>
 
