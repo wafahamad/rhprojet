@@ -26,6 +26,11 @@ export class HomeRhComponent implements OnInit {
       this.router.navigate(['/performingEmp',id]);
       
     }
+    commentEmploye(id : number){
+
+      this.router.navigate(['/comment',id]);
+      
+    }
 
   ngOnInit(): void {
     this.service.AfficherEmp().subscribe(data => {

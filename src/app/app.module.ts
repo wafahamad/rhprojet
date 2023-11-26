@@ -17,6 +17,10 @@ import { ListCalendrierComponent } from './Interfaces/Employe/list-calendrier/li
 import { EditEmployeComponent } from './Interfaces/RH/edit-employe/edit-employe.component';
 import { HomeComponent } from './Interfaces/home/home.component';
 import { AjouterEmpComponent } from './Interfaces/RH/ajouter-emp/ajouter-emp.component';
+import { ListCongesComponent } from './Interfaces/RH/list-conges/list-conges.component';
+import { DemandeCongeComponent } from './Interfaces/Employe/demande-conge/demande-conge.component';
+import { DemandeDemissionComponent } from './Interfaces/Employe/demande-demission/demande-demission.component';
+import { CreerCommentComponent } from './Interfaces/RH/creer-comment/creer-comment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +35,11 @@ import { AjouterEmpComponent } from './Interfaces/RH/ajouter-emp/ajouter-emp.com
     ListCalendrierComponent,
     EditEmployeComponent,
     HomeComponent,
-    AjouterEmpComponent
+    AjouterEmpComponent,
+    ListCongesComponent,
+    DemandeCongeComponent,
+    DemandeDemissionComponent,
+    CreerCommentComponent
   ],
   imports: [
     BrowserModule,

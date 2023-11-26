@@ -10,6 +10,10 @@ import { EditEmployeComponent } from './Interfaces/RH/edit-employe/edit-employe.
 import { LoginRhComponent } from './Interfaces/RH/login-rh/login-rh.component';
 import { HomeComponent } from './Interfaces/home/home.component';
 import { AjouterEmpComponent } from './Interfaces/RH/ajouter-emp/ajouter-emp.component';
+import { ListCongesComponent } from './Interfaces/RH/list-conges/list-conges.component';
+import { DemandeCongeComponent } from './Interfaces/Employe/demande-conge/demande-conge.component';
+import { DemandeDemissionComponent } from './Interfaces/Employe/demande-demission/demande-demission.component';
+import { CreerCommentComponent } from './Interfaces/RH/creer-comment/creer-comment.component';
 
 const routes: Routes = [
   { path: '', title: 'home Entreprise', component: HomeComponent },
@@ -33,7 +37,14 @@ const routes: Routes = [
   },
   {
     path:"homeRh/:id/ajoutEmp",title:"ajouter employé", component:AjouterEmpComponent
-  }
+  },
+  
+  {path:"listconge",title:"list conges",component:ListCongesComponent},
+  {path:"demandeConge/:id",title:"demande conge",component:DemandeCongeComponent},
+  {path:"demandeDemisson/:id",title:"demande demision",component:DemandeDemissionComponent},
+  {path:"comment/:id",title:"comment",component:CreerCommentComponent}
+
+
 ];
 
 @NgModule({
