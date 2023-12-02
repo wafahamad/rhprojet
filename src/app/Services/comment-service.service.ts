@@ -14,7 +14,7 @@ export class CommentServiceService {
   createComment(employeeId: number, comment: Comments): Observable<Comment> {
     const url = `${this.apiUrl}/${employeeId}/comments`;
     return this.http.post<Comment>(url, comment);
-  }
+  } 
 
   getCommentsByEmployeeId(employeeId: number): Observable<Comments[]> {
     const url = `${this.apiUrl}/${employeeId}/comments`;

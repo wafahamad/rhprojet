@@ -21,6 +21,7 @@ import { ListCongesComponent } from './Interfaces/RH/list-conges/list-conges.com
 import { DemandeCongeComponent } from './Interfaces/Employe/demande-conge/demande-conge.component';
 import { DemandeDemissionComponent } from './Interfaces/Employe/demande-demission/demande-demission.component';
 import { CreerCommentComponent } from './Interfaces/RH/creer-comment/creer-comment.component';
+import { ListDemissionComponent } from './Interfaces/RH/list-demission/list-demission.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { CreerCommentComponent } from './Interfaces/RH/creer-comment/creer-comme
     ListCongesComponent,
     DemandeCongeComponent,
     DemandeDemissionComponent,
-    CreerCommentComponent
+    CreerCommentComponent,
+    ListDemissionComponent
   ],
   imports: [
     BrowserModule,

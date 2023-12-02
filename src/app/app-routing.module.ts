@@ -39,7 +39,7 @@ const routes: Routes = [
     path:"homeRh/:id/ajoutEmp",title:"ajouter employé", component:AjouterEmpComponent
   },
   
-  {path:"listconge",title:"list conges",component:ListCongesComponent},
+  {path:"listConge",title:"list conges",component:ListCongesComponent},
   {path:"demandeConge/:id",title:"demande conge",component:DemandeCongeComponent},
   {path:"demandeDemisson/:id",title:"demande demision",component:DemandeDemissionComponent},
   {path:"comment/:id",title:"comment",component:CreerCommentComponent}

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Demission } from '../Classes/demission';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +13,9 @@ export class DemissionServiceService {
   createDemission(employeeId: number, data: any): Observable<any> {
     const url = `${this.api}/${employeeId}/demissions`;
     return this.http.post<any>(url, { employeeId, data });
+  }
+  getDemissionsByEmployeeId(employeeId: number): Observable<Demission[]> {
+    const url = `${this.api}/${employeeId}/demissions`;
+    return this.http.get<Demission[]>(url);
   }
 }
